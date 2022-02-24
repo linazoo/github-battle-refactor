@@ -6,7 +6,7 @@ import Popular from "./components/Popular";
 import { ThemeProvider } from "./contexts/theme";
 
 class App extends React.Component {
-  constructor() {
+  constructor(props) {
     super(props);
 
     this.state = {
