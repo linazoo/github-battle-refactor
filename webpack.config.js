@@ -1,8 +1,9 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./App/index.js",
+  entry: "./app/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index_bundle.js",
@@ -17,8 +18,9 @@ module.exports = {
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "App/index.html",
+      template: "app/index.html",
     }),
+    new CopyPlugin({ patterns: [{ from: "_redirects" }] }),
   ],
   devServer: {
     historyApiFallback: true,
