@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./app/index.js",
+  entry: "./App/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "index_bundle.js",
@@ -18,7 +18,7 @@ module.exports = {
   mode: process.env.NODE_ENV === "production" ? "production" : "development",
   plugins: [
     new HtmlWebpackPlugin({
-      template: "app/index.html",
+      template: "App/index.html",
     }),
     new CopyPlugin({ patterns: [{ from: "_redirects" }] }),
   ],
